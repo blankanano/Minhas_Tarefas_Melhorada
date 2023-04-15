@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Minhas_Tarefas_Melhorada</string>
+    <string name="lista_de_tarefas">Lista de Tarefas</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="deletar">Deletar</string>
+    <string name="limpar">Limpar</string>
+    <string name="minhas_tarefas">Minhas tarefas</string>
+    <string name="entrar">Entrar</string>
+    <string name="e_mail">E-mail*</string>
+    <string name="senha">Senha*</string>
+    <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="entrar_com_google">Entrar com Google</string>
+    <string name="ou">ou</string>
+    <string name="registrar">Registrar</string>
+</resources>

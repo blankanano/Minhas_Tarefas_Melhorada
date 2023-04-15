@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "741099535624",
+    "project_id": "minhas-tarefas-melhorada",
+    "storage_bucket": "minhas-tarefas-melhorada.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741099535624:android:d15419f39b550800e3c0bd",
+        "android_client_info": {
+          "package_name": "com.example.minhas_tarefas_melhorada"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741099535624-lj6sqv6khadb0r8airpadvpsi32itkrn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6eY_KTfxggEcwCLevtzmPgWd5STOOIN4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741099535624-lj6sqv6khadb0r8airpadvpsi32itkrn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

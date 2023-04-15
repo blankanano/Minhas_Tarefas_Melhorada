@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 
 @Suppress("DEPRECATION")
-class Login_Screen : AppCompatActivity() {
+class LoginScreen : AppCompatActivity() {
 
     lateinit var editEmail: EditText
     lateinit var editPassword: EditText
@@ -43,7 +43,7 @@ class Login_Screen : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance();
 
         findViewById<View>(R.id.btnregistrarView).setOnClickListener{
-            val activity = Intent(this, Create_Account::class.java);
+            val activity = Intent(this, CreateAccount::class.java);
             startActivity(activity);
         }
 
@@ -57,7 +57,7 @@ class Login_Screen : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.textEsqueciSenha).setOnClickListener {
-            val activity = Intent(this, Forgot_PassWord::class.java);
+            val activity = Intent(this, ForgotPassWord::class.java);
             startActivity(activity);
         }
     }
@@ -103,7 +103,7 @@ class Login_Screen : AppCompatActivity() {
     private fun entrar(){
         println(editEmail.text.toString().trim());
         println(editPassword.text.toString().trim())
-        if(Funcoes_Compartilhadas.campoVazio(editEmail.text.toString().trim(), editPassword.text.toString().trim())){
+        if(FuncoesCompartilhadas.campoVazio(editEmail.text.toString().trim(), editPassword.text.toString().trim())){
             println("Entrou na função - Entrar");
 
             val userEmail = editEmail.text.toString().trim()

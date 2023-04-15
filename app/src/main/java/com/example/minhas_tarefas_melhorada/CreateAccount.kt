@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import com.example.minhas_tarefas_melhorada.fragments.FragmentSenhaDificuldade
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -17,12 +18,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import fragments.Fragment_Senha_Dificuldade
 
 @Suppress("DEPRECATION")
-class Create_Account : AppCompatActivity() {
+class CreateAccount : AppCompatActivity() {
     lateinit var editEmail: EditText
-    lateinit var editPassword: Fragment_Senha_Dificuldade
+    lateinit var editPassword: FragmentSenhaDificuldade
     lateinit var editConfirmPassword: EditText
     lateinit var createAccountInputArray: Array<Any>
 
@@ -39,7 +39,7 @@ class Create_Account : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance();
 
         editEmail = findViewById<EditText>(R.id.editEmail)
-        editPassword = supportFragmentManager.findFragmentById(R.id.editPassword) as Fragment_Senha_Dificuldade
+        editPassword = supportFragmentManager.findFragmentById(R.id.editPassword) as FragmentSenhaDificuldade
         editConfirmPassword = findViewById<EditText>(R.id.editConfirmaPassword)
 
         createAccountInputArray = arrayOf(editEmail, editPassword, editConfirmPassword)
@@ -52,7 +52,7 @@ class Create_Account : AppCompatActivity() {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         findViewById<View>(R.id.loginView).setOnClickListener{
-            val activity = Intent(this, Login_Screen::class.java);
+            val activity = Intent(this, LoginScreen::class.java);
             startActivity(activity);
         }
 
@@ -106,16 +106,14 @@ class Create_Account : AppCompatActivity() {
 
     private fun entrar(){
         println("Entrou na função - Entrar");
-        println(editEmail.text.toString().trim());
-        println(editPassword.text.toString().trim());
-        if(Funcoes_Compartilhadas.campoVazio(editEmail.text.toString().trim(),
+        if(FuncoesCompartilhadas.campoVazio(editEmail.text.toString().trim(),
                                              editPassword.text.toString().trim(),
                                              editConfirmPassword.text.toString().trim())){
             println("Entrou na função - Campo Vazio");
-            if (Funcoes_Compartilhadas.SenhasIdenticas(editPassword.text.toString().trim(),
-                                                       editConfirmPassword.text.toString().trim())){
+            if (FuncoesCompartilhadas.SenhasIdenticas(editPassword.text.toString().trim(),
+                                                      editConfirmPassword.text.toString().trim())){
                 println("Entrou na função - Senhas identicas");
-                if (Funcoes_Compartilhadas.VerificarTamanhoSenha(editPassword.text.toString().trim())) {
+                if (FuncoesCompartilhadas.VerificarTamanhoSenha(editPassword.text.toString().trim())) {
                     println("Entrou na função - Verificar tamanho da senha");
                     val userEmail = editEmail.text.toString().trim()
                     val userPassword = editPassword.text.toString().trim()
